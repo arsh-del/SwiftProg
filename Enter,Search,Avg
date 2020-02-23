@@ -1,0 +1,96 @@
+	//the user enters N, and product names, prices
+	//after filling the arrays then
+	//lets the user enter a product name, if exists print its price and ask the user to enter required quantity
+	//when the user enters the quantity find the total price abd add the tax then print the total
+	func productReading(Product: inout[String], Price: inout[Double], n: Int){
+	for _ in 0..<n{
+	print("Enter the products name")
+	Product.append(readLine()!)
+	print("Enter the product price")
+	Price.append(Double(readLine()!)!)
+	}
+	
+	}
+	func productSearch(Product : [String], name: String) -> Int{
+	for i in 0..<Product.count{
+	if name == Product[i]{
+	
+	
+	return i
+	}
+	
+	}
+	return -1
+	}
+	func nameSearch(Product : [String], Price: [Double], name: String ) -> Double{
+	for i in 0..<Product.count{
+	if name == Product[i]
+	{
+	return Price[i]
+	}
+	return -1
+	}
+	return 0
+	}
+	func priceAvg(Price: [Double]) -> Double{
+	let sum = Price.reduce(0,+)
+	let avg: Double = sum/Double(Price.count)
+	print(avg)
+	
+	return 0
+	}
+	func priceIncrease(Price: [Double], Product: [String]) ->Double{
+	for i in 0..<Price.count{
+	if Price[i]>=30{
+	print(Product[i])
+	let inc = Price[i]*1.10
+	print(inc)
+	}
+	else{
+	print("")
+	}
+	}
+	return 0
+	}
+	print("How many products you have")
+	let n = Int(readLine()!)!
+	var Product = [String]()
+	var Price = [Double]()
+	productReading(Product: &Product, Price: &Price , n: n)
+	print(Product)
+	print(Price)
+	print("Enter the name of the product you want to buy:")
+	let name = readLine()!
+	let p = productSearch(Product: Product, name: name)
+	if p == -1{
+	print("The required product does not exist")
+	}
+	else{
+	print("The price of Product is \(Price[p])")
+	print("Enter the quantity of the product")
+	let qty = Double(readLine()!)!
+	let total = Price[p] * qty * 1.13
+	print("Total price is \(total)")
+	}
+	let select = nameSearch(Product: Product,Price: Price, name: name)
+	if select == -1{
+	print("The Required product does not exist")
+	}
+	else{
+	print("The price of the product is: \(select)")
+	print("How much quantity you want")
+	let qty = Double(readLine()!)!
+	let total = select*qty*1.13
+	print("total price is: \(total)")
+	}
+	print("Press 1 if you want to find avg and 2 if you want to increase prices less than 30 by 10%")
+	let choice = Int(readLine()!)!
+	if choice == 1{
+	let avg = priceAvg(Price: Price)
+	
+	}
+	else{
+	let increase = priceIncrease(Price: Price, Product: Product)
+	}
+	
+
