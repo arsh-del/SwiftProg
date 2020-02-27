@@ -1,0 +1,151 @@
+# SwiftProg
+Swift Programs
+func reading(name: inout[String],hrs: inout[Double],pay: inout[Double]){
+
+    for _ in 0..<5{
+
+        print("Enter the name of the emplyee")
+
+        name.append(readLine()!)
+
+        
+
+        print("Enter the Alloted pay per hour")
+
+        pay.append(Double(readLine()!)!)
+
+        for i in 0..<7{
+
+            print("Enter the number of hours worked on \(i+1) day of week")
+
+            hrs.append(Double(readLine()!)!)
+
+        }
+
+    }
+
+}
+
+func weekend(hrs: [Double],pay: [Double]) -> Double{
+
+    for i in 0...hrs.count-1{
+
+        if(i == 5)&&(i == 6){
+
+            let a = pay[5]*2.0
+
+            let b = pay[6]*2.0
+
+            print("Pay For Saturday \(a)")
+
+            print("Pay for Sunday \(b)")
+
+        }
+
+       
+
+    }
+
+    return 0.0
+
+}
+
+func weekday(name: [String],hrs: [Double],pay: [Double]) ->Double{
+
+  for j in 0..<name.count{
+
+    if(hrs[0] > 8) && (hrs[2] > 8){
+
+        let newPay = (hrs[0]*pay[j])*1.5
+
+        let newPay1 = (hrs[2]*pay[j])*1.5
+
+         print("Pay For Monday \(newPay)")
+
+                      print("Pay For Wednesday \(newPay1)")
+
+    }
+
+    else{
+
+        let newPay = (hrs[0]*pay[j])
+
+        let newPay1 = (hrs[2]*pay[j])
+
+        print("Pay For Monday \(newPay)")
+
+               print("Pay For Wednesday \(newPay1)")
+
+    }
+
+    }
+
+    return 0.0
+
+}
+
+func weekday1(name: [String],hrs: [Double],pay: [Double]) ->Double{
+
+    for j in 0..<name.count{
+
+    if(hrs[1] > 6) && (hrs[3] > 6) && (hrs[4] > 6){
+
+        let newPay = (hrs[1]*pay[j])*1.5
+
+        let newPay1 = (hrs[3]*pay[j])*1.5
+
+        let newPay2 = (hrs[4]*pay[j])*1.5
+
+        print("Pay for Tuesday: \(newPay)")
+
+               print("Pay for Thursday \(newPay1)")
+
+        print("Pay for Friday \(newPay2)")
+
+        }
+
+    else{
+
+        let newPay = (hrs[1]*pay[j])
+
+        let newPay1 = (hrs[3]*pay[j])
+
+        let newPay2 = (hrs[4]*pay[j])
+
+        print("Pay for Tuesday: \(newPay)")
+
+               print("Pay for Thursday \(newPay1)")
+
+        print("Pay for Friday \(newPay2)")
+
+        }
+
+    }
+
+        return 0.0
+
+    }
+
+
+
+enum week: Int {
+
+    case Monday=1, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+
+}
+
+var name = [String]()
+
+var hrs = [Double]()
+
+var pay = [Double]()
+
+let r = reading(name: &name,hrs: &hrs,pay: &pay)
+
+print(r)
+
+let v = weekend(hrs: hrs, pay: hrs)
+
+let e = weekday(name: name, hrs: hrs, pay: pay)
+
+let a = weekday1(name: name, hrs: hrs, pay: pay)
