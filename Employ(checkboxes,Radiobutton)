@@ -1,0 +1,443 @@
+import UIKit
+
+
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var bachelor: UIButton!
+
+    @IBOutlet weak var diploma: UIButton!
+
+    @IBOutlet weak var highSchool: UIButton!
+
+    @IBOutlet weak var single: UIButton!
+
+    @IBOutlet weak var notSingle: UIButton!
+
+    @IBOutlet weak var btn1: UIButton!
+
+    @IBOutlet weak var btn2: UIButton!
+
+    @IBOutlet weak var java: UIButton!
+
+    @IBOutlet weak var cHash: UIButton!
+
+    @IBOutlet weak var swift: UIButton!
+
+    @IBOutlet weak var php: UIButton!
+
+    @IBOutlet weak var python: UIButton!
+
+    @IBOutlet weak var langR: UIButton!
+
+    @IBOutlet weak var javaScript: UIButton!
+
+    @IBOutlet weak var kids: UITextField!
+
+    @IBOutlet weak var exp1: UITextField!
+
+    @IBOutlet weak var salary: UILabel!
+
+    
+
+    @IBAction func calculate(_ sender: Any) {
+
+        var amt: Double = 0
+
+            let n1 = Double(kids.text!)!
+
+            let n2 = Double(exp1.text!)!
+
+            if bachelor.isSelected{
+
+                if btn1.isSelected{
+
+                    
+
+                    amt = 55000.00 + (7000.00*n1)
+
+                }
+
+                else if btn2.isSelected{
+
+                    
+
+                    amt = amt + 0
+
+                }
+
+                if java.isSelected || javaScript.isSelected || cHash.isSelected {
+
+                    amt = amt + 3000
+
+                
+
+             
+
+                
+
+                }
+
+               
+
+                if swift.isSelected || php.isSelected || python.isSelected || langR.isSelected {
+
+                    amt = amt + 5000.00
+
+                
+
+               
+
+                        
+
+                }
+
+            if 3 < n2{
+
+                let result = amt + 10000.00
+
+                salary.text = String(result)
+
+            }
+
+            else{
+
+                let result = amt
+
+                salary.text = String(result)
+
+            }
+
+            }
+
+        else if diploma.isSelected{
+
+            if btn1.isSelected{
+
+                
+
+                amt = 47000.00 + (n1 * 7000.00)
+
+            }
+
+            else if btn2.isSelected{
+
+                
+
+                amt = amt + 0
+
+                }
+
+                 if java.isSelected || javaScript.isSelected || cHash.isSelected {
+
+                                  amt = amt + 3000
+
+                              
+
+                           
+
+                              
+
+                              }
+
+                
+
+                if swift.isSelected || php.isSelected || python.isSelected || langR.isSelected {
+
+                    amt = amt + 5000.00
+
+                }
+
+                
+
+                             
+
+        
+
+              
+
+                if 3 < n2{
+
+                    let result = amt + 10000.00
+
+                    salary.text = String(result)
+
+                }
+
+                else{
+
+                    let result = amt
+
+                    salary.text = String(result)
+
+                }
+
+        }
+
+            else if highSchool.isSelected{
+
+                if btn1.isSelected{
+
+                    
+
+                    amt = 40000.00 + (n1 * 7000.00)
+
+            
+
+                }
+
+                if btn2.isSelected{
+
+                    
+
+                    amt = amt + 0
+
+                }
+
+                    if java.isSelected || javaScript.isSelected || cHash.isSelected {
+
+                                      amt = amt + 3000
+
+                                  
+
+                               
+
+                                  
+
+                                  }
+
+                    
+
+                      
+
+                          if swift.isSelected || php.isSelected || python.isSelected || langR.isSelected {
+
+                                             amt = amt + 5000.00
+
+                                         }
+
+                                         
+
+                
+
+                  
+
+                    if 3 < n2{
+
+                        let result = amt + 10000.00
+
+                        salary.text = String(format: "%.2f",result)
+
+                    }
+
+                    else{
+
+                        let result = amt
+
+                        salary.text = String(format: "%.2f",result)
+
+                    }
+
+                    
+
+                    
+
+                
+
+        }
+
+           
+
+    }
+
+    
+
+        
+
+
+
+
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+
+    }
+
+    @IBAction func bach(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+            diploma.isSelected = false
+
+            highSchool.isSelected = false
+
+        }
+
+    }
+
+    @IBAction func diplo(_ sender: UIButton) {
+
+        if sender.isSelected {
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+            bachelor.isSelected = false
+
+            highSchool.isSelected = false
+
+        }
+
+    }
+
+    @IBAction func school(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+            bachelor.isSelected = false
+
+            diploma.isSelected = false
+
+        }
+
+    }
+
+    @IBAction func sing(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+            notSingle.isSelected = false
+
+        }
+
+    }
+
+    @IBAction func noSing(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+            single.isSelected = false
+
+        }
+
+    }
+
+    @IBAction func btnopt1(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+            btn2.isSelected = false
+
+        }
+
+    }
+
+    
+
+    @IBAction func btnopt2(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+            btn1.isSelected = false
+
+        }
+
+    }
+
+    @IBAction func javaopt(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+        }
+
+    }
+
+    @IBAction func cHashOpt(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
+
+        else{
+
+            sender.isSelected = true
+
+        }
+
+    }
+
+    
+
+    @IBAction func swiftOpt(_ sender: UIButton) {
+
+        if sender.isSelected{
+
+            sender.isSelected = false
+
+        }
